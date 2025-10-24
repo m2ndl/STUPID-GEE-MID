@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discourse Analysis Study Guide</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap');
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-            color: #212529;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #fcfaf5; /* Warm cream background */
+            color: #3d3d3d; /* Darker gray text for readability */
             margin: 0;
             padding: 20px;
         }
@@ -18,23 +20,25 @@
             margin: 0 auto;
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
             overflow: hidden;
+            border: 1px solid #e6dbc9;
         }
         h1 {
+            font-family: 'Merriweather', serif;
             text-align: center;
-            color: #0056b3;
-            padding: 20px 0;
+            color: #4a7c59; /* Warm green */
+            padding: 25px 0;
             margin: 0;
-            background-color: #f1f3f5;
-            border-bottom: 1px solid #dee2e6;
+            background-color: #f9f6f0; /* Light tan */
+            border-bottom: 1px solid #e6dbc9; /* Tan border */
         }
         
         /* Tab Styles */
         .tab-container {
             overflow: hidden;
-            background-color: #f1f3f5;
-            border-bottom: 1px solid #dee2e6;
+            background-color: #f9f6f0; /* Light tan */
+            border-bottom: 1px solid #e6dbc9;
         }
         .tab-link {
             background-color: inherit;
@@ -42,18 +46,20 @@
             border: none;
             outline: none;
             cursor: pointer;
-            padding: 14px 16px;
+            padding: 14px 18px;
             transition: 0.3s;
             font-size: 17px;
-            font-weight: 500;
+            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+            color: #6c584c; /* Warm brown text */
         }
         .tab-link:hover {
-            background-color: #e9ecef;
+            background-color: #f0e9dd;
         }
         .tab-link.active {
             background-color: #ffffff;
-            border-bottom: 3px solid #007bff;
-            color: #007bff;
+            border-bottom: 3px solid #4a7c59; /* Warm green accent */
+            color: #4a7c59;
         }
         .tab-content {
             display: none;
@@ -62,30 +68,33 @@
         
         /* Accordion Styles */
         .accordion {
-            background-color: #f1f3f5;
-            color: #343a40;
+            background-color: #f9f6f0; /* Light tan */
+            color: #4a7c59; /* Warm green */
             cursor: pointer;
             padding: 18px;
             width: 100%;
             border: none;
             text-align: left;
             outline: none;
-            font-size: 1.1em;
-            font-weight: 600;
+            font-size: 1.2em;
+            font-weight: 700;
+            font-family: 'Merriweather', serif;
             transition: 0.4s;
             margin-top: 10px;
             border-radius: 5px;
+            border: 1px solid #e6dbc9;
         }
         .accordion:hover, .accordion.active {
-            background-color: #e9ecef;
+            background-color: #f0e9dd; /* Slightly darker tan */
         }
         .accordion.active {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
+            border-bottom: 1px solid #e6dbc9;
         }
         .accordion::after {
             content: '\002B'; /* Plus sign */
-            color: #007bff;
+            color: #4a7c59; /* Warm green */
             font-weight: bold;
             float: right;
             margin-left: 5px;
@@ -94,20 +103,21 @@
             content: "\2212"; /* Minus sign */
         }
         .panel {
-            padding: 0 18px;
+            padding: 18px 22px;
             background-color: white;
             display: none;
             overflow: hidden;
-            border-left: 3px solid #007bff;
-            border-right: 1px solid #dee2e6;
-            border-bottom: 1px solid #dee2e6;
+            border-left: 3px solid #4a7c59; /* Warm green */
+            border-right: 1px solid #e6dbc9;
+            border-bottom: 1px solid #e6dbc9;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
         
         /* Content Styles */
         .panel p, .panel li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: #3d3d3d;
         }
         .panel ul {
             margin-top: 10px;
@@ -115,29 +125,38 @@
         }
         .panel li {
             margin-left: 20px;
-        }
-        cite {
-            font-style: normal;
-            font-size: 0.9em;
-            color: #6c757d;
+            padding-left: 5px;
         }
         .key-concept {
-            background-color: #fff9db;
-            border: 1px solid #ffe88a;
-            padding: 12px;
+            background-color: #fffbeb; /* Light parchment/yellow */
+            border: 1px solid #f0e68c; /* Soft gold border */
+            padding: 14px;
             margin: 15px 0;
             border-radius: 5px;
         }
         .da-question {
-            background-color: #e6f7ff;
-            border-left: 4px solid #1890ff;
-            padding: 12px;
+            background-color: #e8f5e9; /* Light green */
+            border-left: 4px solid #66bb6a; /* Medium green */
+            padding: 14px;
             margin: 15px 0;
             font-style: italic;
-            color: #0d47a1;
+            color: #2e7d32; /* Dark green text */
+        }
+        .structured-answer {
+            background-color: #faf3e0; /* Light warm tan */
+            border: 1px solid #e6dbc9; /* Tan border */
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .structured-answer-q {
+            font-style: italic;
+            font-weight: 600;
+            color: #5d4037; /* Dark brown */
         }
         strong, b {
-            color: #0056b3;
+            color: #4a7c59; /* Warm green */
+            font-weight: 700;
         }
 
     </style>
@@ -158,100 +177,100 @@
             
             <button class="accordion">1. Defining the Field: DA vs. Related Concepts</button>
             <div class="panel">
-                <p><strong>Pragmatics:</strong> The study of how <strong>context</strong> shapes the <strong>interpretation</strong> of utterances. [cite_start]<cite>[cite: 174]</cite></p>
+                <p><strong>Pragmatics:</strong> The study of how <strong>context</strong> shapes the <strong>interpretation</strong> of utterances.</p>
                 <ul>
-                    <li>Example: The sentence "I died" means something different when said by a video game player versus a religious convert. [cite_start]<cite>[cite: 175]</cite></li>
+                    <li>Example: The sentence "I died" means something different when said by a video game player versus a religious convert.</li>
                 </ul>
-                <p><strong>Discourse Analysis (Traditional):</strong> The study of language structure <strong>beyond the sentence</strong>, focusing on how sentences are organized into coherent texts (like stories, reports, or arguments). [cite_start]<cite>[cite: 176]</cite></p>
-                <p><strong>Discourse Analysis (Author's Definition):</strong> A <strong>merged</strong> definition that combines both of the above. [cite_start]<cite>[cite: 177]</cite></p>
+                <p><strong>Discourse Analysis (Traditional):</strong> The study of language structure <strong>beyond the sentence</strong>, focusing on how sentences are organized into coherent texts (like stories, reports, or arguments).</p>
+                <p><strong>Discourse Analysis (Author's Definition):</strong> A <strong>merged</strong> definition that combines both of the above.</p>
                 <ul>
-                    <li>It is "the study of the use and impact of oral or written language in <strong>conveying and shaping ideas and social realities</strong>". [cite_start]<cite>[cite: 178]</cite></li>
+                    <li>It is "the study of the use and impact of oral or written language in <strong>conveying and shaping ideas and social realities</strong>".</li>
                 </ul>
-                <p><strong>Discourse (Foucault's Definition):</strong> A much broader, non-linguistic concept. It refers to a complete system of <strong>knowledge, social practices, institutions, and power relations</strong> that shapes social reality. [cite_start]<cite>[cite: 179]</cite></p>
+                <p><strong>Discourse (Foucault's Definition):</strong> A much broader, non-linguistic concept. It refers to a complete system of <strong>knowledge, social practices, institutions, and power relations</strong> that shapes social reality.</p>
                 <ul>
-                    <li>Example: The "discourse of madness" describes how society (through institutions, laws, and medicine) has treated madness differently over time, framing it as wisdom, then illness, and now (for some) as "neurodiversity". [cite_start]<cite>[cite: 180]</cite></li>
+                    <li>Example: The "discourse of madness" describes how society (through institutions, laws, and medicine) has treated madness differently over time, framing it as wisdom, then illness, and now (for some) as "neurodiversity".</li>
                 </ul>
-                <p><strong>Key Contrast:</strong> The author's <strong>Discourse Analysis</strong> is <strong>linguistic</strong> (about language-in-use). [cite_start]<cite>[cite: 181]</cite> Foucault's <strong>Discourse</strong> is <strong>sociological</strong> (about systems of power and knowledge). [cite_start]<cite>[cite: 182]</cite></p>
+                <p><strong>Key Contrast:</strong> The author's <strong>Discourse Analysis</strong> is <strong>linguistic</strong> (about language-in-use). Foucault's <strong>Discourse</strong> is <strong>sociological</strong> (about systems of power and knowledge).</p>
             </div>
 
             <button class="accordion">2. The Core of Meaning: Grammar's Role</button>
             <div class="panel">
-                <p><strong>Semantics (System Meaning):</strong> The basic, literal, abstract, or "dictionary" meaning of a word or sentence, as defined by the rules of grammar, <strong>independent of any context</strong>. [cite_start]<cite>[cite: 184]</cite></p>
+                <p><strong>Semantics (System Meaning):</strong> The basic, literal, abstract, or "dictionary" meaning of a word or sentence, as defined by the rules of grammar, <strong>independent of any context</strong>.</p>
                 <ul>
-                    <li>Example: The <strong>system meaning</strong> of "Alman is dead" is simply that a person named Alman is "now not alive". [cite_start]<cite>[cite: 185]</cite></li>
+                    <li>Example: The <strong>system meaning</strong> of "Alman is dead" is simply that a person named Alman is "now not alive".</li>
                 </ul>
-                <p><strong>Situational Meaning:</strong> The specific, adapted, and nuanced meaning that arises when language is used <strong>in an actual context</strong>. [cite_start]<cite>[cite: 186]</cite></p>
+                <p><strong>Situational Meaning:</strong> The specific, adapted, and nuanced meaning that arises when language is used <strong>in an actual context</strong>.</p>
                 <ul>
-                    <li>This is the primary focus of Discourse Analysis. [cite_start]<cite>[cite: 187]</cite></li>
-                    <li>Example: The <strong>situational meaning</strong> of "Alman is dead" could be that his video game character died, or that he is spiritually "dead to his old self". [cite_start]<cite>[cite: 188]</cite></li>
+                    <li>This is the primary focus of Discourse Analysis.</li>
+                    <li>Example: The <strong>situational meaning</strong> of "Alman is dead" could be that his video game character died, or that he is spiritually "dead to his old self".</li>
                 </ul>
-                <p><strong>Key Connection:</strong> Discourse analysis studies how speakers and listeners use <strong>context</strong> to move from the abstract <strong>System Meaning</strong> (semantics) to a specific <strong>Situational Meaning</strong>. [cite_start]<cite>[cite: 189]</cite></p>
+                <p><strong>Key Connection:</strong> Discourse analysis studies how speakers and listeners use <strong>context</strong> to move from the abstract <strong>System Meaning</strong> (semantics) to a specific <strong>Situational Meaning</strong>.</p>
             </div>
 
             <button class="accordion">3. Grammar as a Perspective-Taking Device</button>
             <div class="panel">
-                <p>This concept states that grammar provides a set of patterns that frame or "spin" reality in different ways. [cite_start]<cite>[cite: 191]</cite></p>
-                <p><strong>Locator Pattern:</strong> A grammatical structure that locates a person or thing in <strong>relation</strong> to something else (a place, a group, or an abstract scale). [cite_start]<cite>[cite: 192]</cite></p>
+                <p>This concept states that grammar provides a set of patterns that frame or "spin" reality in different ways.</p>
+                <p><strong>Locator Pattern:</strong> A grammatical structure that locates a person or thing in <strong>relation</strong> to something else (a place, a group, or an abstract scale).</p>
                 <ul>
-                    <li>It describes a <strong>relational property</strong>. [cite_start]<cite>[cite: 193]</cite></li>
-                    <li>Example: "John is <strong>in the 90th percentile</strong>" or "Johnnie is a <strong>'3' on the state test</strong>". [cite_start]<cite>[cite: 194]</cite></li>
-                    <li>These are not inherent facts about John, but his position relative to a test. [cite_start]<cite>[cite: 195]</cite></li>
+                    <li>It describes a <strong>relational property</strong>.</li>
+                    <li>Example: "John is <strong>in the 90th percentile</strong>" or "Johnnie is a <strong>'3' on the state test</strong>".</li>
+                    <li>These are not inherent facts about John, but his position relative to a test.</li>
                 </ul>
-                <p><strong>Personal Property Pattern:</strong> A grammatical structure that attributes an <strong>inherent, internal quality</strong> or trait to a person. [cite_start]<cite>[cite: 196]</cite></p>
+                <p><strong>Personal Property Pattern:</strong> A grammatical structure that attributes an <strong>inherent, internal quality</strong> or trait to a person.</p>
                 <ul>
-                    <li>Example: "John is <strong>cautious</strong>" or "John is <strong>honorable</strong>". [cite_start]<cite>[cite: 197]</cite></li>
+                    <li>Example: "John is <strong>cautious</strong>" or "John is <strong>honorable</strong>".</li>
                 </ul>
-                <p><strong>Category Error:</strong> The crucial mistake of treating a <strong>Locator Pattern</strong> statement <strong>as if</strong> it were a <strong>Personal Property Pattern</strong> statement. [cite_start]<cite>[cite: 198]</cite></p>
+                <p><strong>Category Error:</strong> The crucial mistake of treating a <strong>Locator Pattern</strong> statement <strong>as if</strong> it were a <strong>Personal Property Pattern</strong> statement.</p>
                 <ul>
-                    <li>Example: The teachers in the transcript <strong>slide</strong> from "Johnnie is a '3'" (Locator) to discussing the <strong>inherent properties</strong> of a "3" (e.g., being "self-initiated"). [cite_start]<cite>[cite: 199]</cite></li>
-                    <li>They are turning an external test score into an internal personality trait. [cite_start]<cite>[cite: 200]</cite></li>
+                    <li>Example: The teachers in the transcript <strong>slide</strong> from "Johnnie is a '3'" (Locator) to discussing the <strong>inherent properties</strong> of a "3" (e.g., being "self-initiated").</li>
+                    <li>They are turning an external test score into an internal personality trait.</li>
                 </ul>
-                <p><strong>Transfer Pattern:</strong> A grammatical structure that frames an event as the <strong>transfer of a thing</strong> (physical or abstract) from one person to another. [cite_start]<cite>[cite: 201]</cite></p>
+                <p><strong>Transfer Pattern:</strong> A grammatical structure that frames an event as the <strong>transfer of a thing</strong> (physical or abstract) from one person to another.</p>
                 <ul>
-                    <li>Example: "Mary taught biology to the students". This frames teaching as a <strong>transfer of content</strong> (biology) from teacher to student. [cite_start]<cite>[cite: 202]</cite></li>
-                    <li>Contrast: This perspective differs from a Socratic view (drawing knowledge <strong>out</strong> of a student) or a skill-based view ("Mary taught the students <strong>how to do</strong> biology"). [cite_start]<cite>[cite: 203]</cite></li>
+                    <li>Example: "Mary taught biology to the students". This frames teaching as a <strong>transfer of content</strong> (biology) from teacher to student.</li>
+                    <li>Contrast: This perspective differs from a Socratic view (drawing knowledge <strong>out</strong> of a student) or a skill-based view ("Mary taught the students <strong>how to do</strong> biology").</li>
                 </ul>
             </div>
 
             <button class="accordion">4. Communicative Tasks (The "Tools" of DA)</button>
             <div class="panel">
-                <p><strong>Recipient Design (Speaker Task):</strong> How a speaker <strong>tailors</strong> their communication (style, tone, word choice) to fit their specific audience's perceived knowledge, status, or expectations. [cite_start]<cite>[cite: 205]</cite></p>
-                [cite_start]<p><strong>Positioning Design (Speaker Task):</strong> How a speaker uses language to frame a specific <strong>relationship</strong> by: <cite>[cite: 206]</cite></p>
+                <p><strong>Recipient Design (Speaker Task):</strong> How a speaker <strong>tailors</strong> their communication (style, tone, word choice) to fit their specific audience's perceived knowledge, status, or expectations.</p>
+                <p><strong>Positioning Design (Speaker Task):</strong> How a speaker uses language to frame a specific <strong>relationship</strong> by:</p>
                 <ul>
-                    <li>Positioning <strong>themselves</strong> (e.g., as an "authority" or "friend"). [cite_start]<cite>[cite: 207]</cite></li>
-                    <li>Attempting to get the listener to accept the <strong>corresponding</strong> identity (e.g., as a "subordinate" or "person needing advice"). [cite_start]<cite>[cite: 208]</cite></li>
+                    <li>Positioning <strong>themselves</strong> (e.g., as an "authority" or "friend").</li>
+                    <li>Attempting to get the listener to accept the <strong>corresponding</strong> identity (e.g., as a "subordinate" or "person needing advice").</li>
                 </ul>
-                <p><strong>Situational Meaning Creation (Listener Task):</strong> The listener's active process of <strong>interpreting</strong> the speaker's language by using context to understand the intended situational meaning. [cite_start]<cite>[cite: 209]</cite></p>
-                <p><strong>Response Design (Listener Task):</strong> The active, internal process where a listener prepares a response, which includes deciding whether to <strong>accept or reject</strong> the speaker's <strong>Positioning Design</strong>. [cite_start]<cite>[cite: 210]</cite></p>
+                <p><strong>Situational Meaning Creation (Listener Task):</strong> The listener's active process of <strong>interpreting</strong> the speaker's language by using context to understand the intended situational meaning.</p>
+                <p><strong>Response Design (Listener Task):</strong> The active, internal process where a listener prepares a response, which includes deciding whether to <strong>accept or reject</strong> the speaker's <strong>Positioning Design</strong>.</p>
             </div>
 
             <button class="accordion">5. The Core Theory: Identity & Performance</button>
             <div class="panel">
-                <p><strong>Social Languages:</strong> Specific adaptations, styles, or varieties of a language used by a social group to <strong>enact a specific identity</strong>. [cite_start]<cite>[cite: 212]</cite></p>
+                <p><strong>Social Languages:</strong> Specific adaptations, styles, or varieties of a language used by a social group to <strong>enact a specific identity</strong>.</p>
                 <ul>
-                    <li><strong>Non-vernacular (Specialist):</strong> The language of specialist groups (e.g., the "way with words" of lawyers, doctors, gamers). [cite_start]<cite>[cite: 213]</cite></li>
-                    <li><strong>Vernacular:</strong> The "everyday" language used to enact an "everyday person" identity, learned from family and community. [cite_start]<cite>[cite: 214]</cite></li>
+                    <li><strong>Non-vernacular (Specialist):</strong> The language of specialist groups (e.g., the "way with words" of lawyers, doctors, gamers).</li>
+                    <li><strong>Vernacular:</strong> The "everyday" language used to enact an "everyday person" identity, learned from family and community.</li>
                 </ul>
-                <p><strong>Bid (for identity):</strong> An <strong>attempt</strong> by a speaker to get a specific socially significant identity recognized by others. [cite_start]<cite>[cite: 215]</cite></p>
+                <p><strong>Bid (for identity):</strong> An <strong>attempt</strong> by a speaker to get a specific socially significant identity recognized by others.</p>
                 <ul>
-                    <li>A bid can succeed, fail, or be negotiated. [cite_start]<cite>[cite: 216]</cite></li>
+                    <li>A bid can succeed, fail, or be negotiated.</li>
                 </ul>
-                <p><strong>"discourse" (little d):</strong> This is <strong>only the language part</strong> of an identity performance. [cite_start]<cite>[cite: 217]</cite></p>
+                <p><strong>"discourse" (little d):</strong> This is <strong>only the language part</strong> of an identity performance.</p>
                 <ul>
-                    <li>It is "interactive identity-based communication using language" (i.e., language-in-use). [cite_start]<cite>[cite: 218]</cite></li>
-                    <li>Example: The actual <strong>words</strong> spoken by the gamers ("I died for you," "I got the heart"). [cite_start]<cite>[cite: 219]</cite></li>
+                    <li>It is "interactive identity-based communication using language" (i.e., language-in-use).</li>
+                    <li>Example: The actual <strong>words</strong> spoken by the gamers ("I died for you," "I got the heart").</li>
                 </ul>
-                <p><strong>"Discourse" (Big D):</strong> This is the <strong>full performance</strong> of a socially significant identity. [cite_start]<cite>[cite: 220]</cite></p>
+                <p><strong>"Discourse" (Big D):</strong> This is the <strong>full performance</strong> of a socially significant identity.</p>
                 <ul>
-                    <li>It is the combination of "little d" discourse (language) <strong>PLUS</strong> all the non-language "stuff" like clothes, gestures, actions, props, values, and beliefs. [cite_start]<cite>[cite: 221]</cite></li>
+                    <li>It is the combination of "little d" discourse (language) <strong>PLUS</strong> all the non-language "stuff" like clothes, gestures, actions, props, values, and beliefs.</li>
                 </ul>
                 <div class="key-concept">
-                    [cite_start]<p><strong>Key Contrast & Formula:</strong> <cite>[cite: 222]</cite></p>
+                    <p><strong>Key Contrast & Formula:</strong></p>
                     <ul>
-                        [cite_start]<li><strong>"little d"</strong> = Language (the "talk") <cite>[cite: 223]</cite></li>
-                        [cite_start]<li><strong>"Big D"</strong> = Language + Non-Language "Stuff" (the "walk") <cite>[cite: 224]</cite></li>
+                        <li><strong>"little d"</strong> = Language (the "talk")</li>
+                        <li><strong>"Big D"</strong> = Language + Non-Language "Stuff" (the "walk")</li>
                     </ul>
-                    [cite_start]<p>Example: To perform the <strong>Big D Discourse</strong> of a "professor," you must use the right "little d" discourse" (an academic <strong>social language</strong>) AND wear the right clothes, be in the right place (a university), and act the right way. A professor lecturing drunk in a thong <strong>fails</strong> the Big D performance, even if their words ("little d") are correct. <cite>[cite: 225]</cite></p>
+                    <p>Example: To perform the <strong>Big D Discourse</strong> of a "professor," you must use the right "little d" discourse" (an academic <strong>social language</strong>) AND wear the right clothes, be in the right place (a university), and act the right way. A professor lecturing drunk in a thong <strong>fails</strong> the Big D performance, even if their words ("little d") are correct.</p>
                 </div>
             </div>
 
@@ -261,120 +280,120 @@
             
             <button class="accordion">1. The Core Premise: Building Reality</button>
             <div class="panel">
-                <p><strong>"Things" as Constructs:</strong> The chapter's foundational argument is that the "things" we perceive in the world (like a tree or a flower) are not objective, independent realities. [cite_start]<cite>[cite: 3]</cite></p>
+                <p><strong>"Things" as Constructs:</strong> The chapter's foundational argument is that the "things" we perceive in the world (like a tree or a flower) are not objective, independent realities.</p>
                 <ul>
-                    [cite_start]<li>They are <strong>constructs</strong> based on our unique human sensory organs (a bee or a bat perceives a flower completely differently), cognitive processes, and the categories our language and culture provide <cite>[cite: 4]</cite>.</li>
+                    <li>They are <strong>constructs</strong> based on our unique human sensory organs (a bee or a bat perceives a flower completely differently), cognitive processes, and the categories our language and culture provide.</li>
                 </ul>
-                <p><strong>Building with Language:</strong> The central theme is that humans use language to do more than just <strong>describe</strong> the world; [cite_start]<cite>[cite: 5]</cite> we use it to <strong>actively build and shape our social realities</strong>. [cite_start]<cite>[cite: 6]</cite></p>
-                <p><strong>Direct Speech Acts:</strong> These are the simplest examples of "building with language." [cite_start]<cite>[cite: 7]</cite></p>
+                <p><strong>Building with Language:</strong> The central theme is that humans use language to do more than just <strong>describe</strong> the world; we use it to <strong>actively build and shape our social realities</strong>.</p>
+                <p><strong>Direct Speech Acts:</strong> These are the simplest examples of "building with language."</p>
                 <ul>
-                    <li>When said in the right circumstances, the words themselves <strong>create</strong> the reality. [cite_start]<cite>[cite: 8]</cite></li>
-                    <li>Example: An umpire saying "Strike!" <strong>makes</strong> it a strike. [cite_start]<cite>[cite: 9]</cite></li>
-                    <li>A minister saying "I now pronounce you..." <strong>makes</strong> the marriage happen. [cite_start]<cite>[cite: 10]</cite></li>
-                    [cite_start]<li>Saying "I promise" <strong>creates</strong> the promise <cite>[cite: 11]</cite>.</li>
+                    <li>When said in the right circumstances, the words themselves <strong>create</strong> the reality.</li>
+                    <li>Example: An umpire saying "Strike!" <strong>makes</strong> it a strike.</li>
+                    <li>A minister saying "I now pronounce you..." <strong>makes</strong> the marriage happen.</li>
+                    <li>Saying "I promise" <strong>creates</strong> the promise.</li>
                 </ul>
             </div>
 
             <button class="accordion">2. The Seven Building Tasks (The "Tools" of DA)</button>
             <div class="panel">
-                <p>When we speak or write, we are often <strong>simultaneously</strong> performing seven tasks. [cite_start]<cite>[cite: 13]</cite> These tasks are the "social work" our language is doing. [cite_start]<cite>[cite: 14]</cite> Each task provides a <strong>Discourse Analysis Question</strong> to use as a tool. [cite_start]<cite>[cite: 15]</cite></p>
+                <p>When we speak or write, we are often <strong>simultaneously</strong> performing seven tasks. These tasks are the "social work" our language is doing. Each task provides a <strong>Discourse Analysis Question</strong> to use as a tool.</p>
                 
-                <p><strong>1. [cite_start]Significance (Building Significance)</strong> <cite>[cite: 16]</cite></p>
+                <p><strong>1. Significance (Building Significance)</strong></p>
                 <ul>
-                    <li><strong>What it is:</strong> Using language to make certain things seem significant, important, or meaningful (or the opposite: trivial, normal, or insignificant). [cite_start]<cite>[cite: 17]</cite></li>
-                    <li><strong>Example:</strong> Saying "Hornworms <strong>sure</strong> vary a lot" uses a personal marker of attitude ("sure") to build significance. [cite_start]<cite>[cite: 18]</cite> Saying "Hornworm growth exhibits a <strong>significant amount</strong> of variation" uses a technical term ("significant") to build a different, more "scientific" kind of significance. [cite_start]<cite>[cite: 19]</cite></li>
+                    <li><strong>What it is:</strong> Using language to make certain things seem significant, important, or meaningful (or the opposite: trivial, normal, or insignificant).</li>
+                    <li><strong>Example:</strong> Saying "Hornworms <strong>sure</strong> vary a lot" uses a personal marker of attitude ("sure") to build significance. Saying "Hornworm growth exhibits a <strong>significant amount</strong> of variation" uses a technical term ("significant") to build a different, more "scientific" kind of significance.</li>
                 </ul>
-                <div class="da-question"><strong>DA Question:</strong> How is this piece of language being used to make certain things significant or not, and in what ways? [cite_start]<cite>[cite: 20]</cite></div>
+                <div class="da-question"><strong>DA Question:</strong> How is this piece of language being used to make certain things significant or not, and in what ways?</div>
 
-                <p><strong>2. [cite_start]Practices (Building Activities)</strong> <cite>[cite: 21]</cite></p>
+                <p><strong>2. Practices (Building Activities)</strong></p>
                 <ul>
-                    <li><strong>What it is:</strong> Using language to get others to recognize that a specific, socially-recognized "practice" or "activity" is happening. [cite_start]<cite>[cite: 22]</cite></li>
-                    <li><strong>Example:</strong> Speaking in one way to be "chit-chatting before a meeting" versus speaking in another way to be "formally opening the committee meeting." [cite_start]<cite>[cite: 23]</cite></li>
-                    <li><strong>Key Connection:</strong> This connects to the "chicken and egg" problem: the <strong>practice</strong> (like a meeting) gives our words meaning, but our <strong>words</strong> are what <strong>enact</strong> the practice and make it exist. [cite_start]<cite>[cite: 24]</cite> They "bootstrap" each other. [cite_start]<cite>[cite: 25]</cite></li>
+                    <li><strong>What it is:</strong> Using language to get others to recognize that a specific, socially-recognized "practice" or "activity" is happening.</li>
+                    <li><strong>Example:</strong> Speaking in one way to be "chit-chatting before a meeting" versus speaking in another way to be "formally opening the committee meeting."</li>
+                    <li><strong>Key Connection:</strong> This connects to the "chicken and egg" problem: the <strong>practice</strong> (like a meeting) gives our words meaning, but our <strong>words</strong> are what <strong>enact</strong> the practice and make it exist. They "bootstrap" each other.</li>
                 </ul>
-                <div class="da-question"><strong>DA Question:</strong> What practice (activity) is this piece of language being used to enact? [cite_start]<cite>[cite: 26]</cite></div>
+                <div class="da-question"><strong>DA Question:</strong> What practice (activity) is this piece of language being used to enact?</div>
 
-                <p><strong>3. [cite_start]Identities (Building Identities)</strong> <cite>[cite: 27]</cite></p>
+                <p><strong>3. Identities (Building Identities)</strong></p>
                 <ul>
-                    <li><strong>What it is:</strong> Using language to enact or "build" a specific identity or role for oneself in the current moment. [cite_start]<cite>[cite: 28]</cite></li>
-                    <li><strong>Key Tactic:</strong> We often build our own identity by simultaneously building or <strong>attributing</strong> an identity to <strong>others</strong>, often in comparison or contrast. [cite_start]<cite>[cite: 29]</cite></li>
-                    <li><strong>Example:</strong> Speaking as the "chair" of the committee (formal identity) versus speaking as a "peer/colleague" (informal identity). [cite_start]<cite>[cite: 30]</cite></li>
+                    <li><strong>What it is:</strong> Using language to enact or "build" a specific identity or role for oneself in the current moment.</li>
+                    <li><strong>Key Tactic:</strong> We often build our own identity by simultaneously building or <strong>attributing</strong> an identity to <strong>others</strong>, often in comparison or contrast.</li>
+                    <li><strong>Example:</strong> Speaking as the "chair" of the committee (formal identity) versus speaking as a "peer/colleague" (informal identity).</li>
                 </ul>
-                <div class="da-question"><strong>DA Question:</strong> What identity is this piece of language being used to enact (for the speaker and for others)? [cite_start]<cite>[cite: 31]</cite></div>
+                <div class="da-question"><strong>DA Question:</strong> What identity is this piece of language being used to enact (for the speaker and for others)?</div>
 
-                <p><strong>4. [cite_start]Relationships (Building Relationships)</strong> <cite>[cite: 32]</cite></p>
+                <p><strong>4. Relationships (Building Relationships)</strong></p>
                 <ul>
-                    <li><strong>What it is:</strong> Using language to signal, create, and build a specific social relationship between the speaker and others (present or not). [cite_start]<cite>[cite: 33]</cite></li>
-                    <li><strong>Example:</strong> "Prof. Smith, I'm very sorry to have to move us on..." (builds a formal, deferential relationship). [cite_start]<cite>[cite: 34]</cite> vs. "Ed, it's time to move on" (builds an informal, less deferential relationship with the same person). [cite_start]<cite>[cite: 35]</cite></li>
-                    [cite_start]<li><strong>Key Connection:</strong> This task is directly related to <strong>Recipient Design</strong> from Chapter 2. <cite>[cite: 36]</cite></li>
+                    <li><strong>What it is:</strong> Using language to signal, create, and build a specific social relationship between the speaker and others (present or not).</li>
+                    <li><strong>Example:</strong> "Prof. Smith, I'm very sorry to have to move us on..." (builds a formal, deferential relationship). vs. "Ed, it's time to move on" (builds an informal, less deferential relationship with the same person).</li>
+                    <li><strong>Key Connection:</strong> This task is directly related to <strong>Recipient Design</strong> from Chapter 2.</li>
                 </ul>
-                <div class="da-question"><strong>DA Question:</strong> What sort of relationship is this piece of language seeking to enact? [cite_start]<cite>[cite: 37]</cite></div>
+                <div class="da-question"><strong>DA Question:</strong> What sort of relationship is this piece of language seeking to enact?</div>
 
-                <p><strong>5. [cite_start]Politics (Building "Social Goods")</strong> <cite>[cite: 38]</cite></p>
+                <p><strong>5. Politics (Building "Social Goods")</strong></p>
                 <ul>
-                    <li><strong>What it is:</strong> Using language to build a perspective on the distribution of <strong>social goods</strong>. [cite_start]<cite>[cite: 39]</cite></li>
-                    <li>A "social good" is anything a society values, such as status, reputation, blame, guilt, or being seen as "normal," "good," or "innovative." [cite_start]<cite>[cite: 40]</cite></li>
-                    <li><strong>Example:</strong> How you talk about bugs in software. [cite_start]<cite>[cite: 41]</cite>
+                    <li><strong>What it is:</strong> Using language to build a perspective on the distribution of <strong>social goods</strong>.</li>
+                    <li>A "social good" is anything a society values, such as status, reputation, blame, guilt, or being seen as "normal," "good," or "innovative."</li>
+                    <li><strong>Example:</strong> How you talk about bugs in software.
                         <ul>
-                            <li>"Microsoft <strong>loaded</strong> its OS with bugs" (Assigns blame; denies the social good of responsibility). [cite_start]<cite>[cite: 42]</cite></li>
-                            <li>"Microsoft's OS <strong>is loaded</strong> with bugs" (Passive voice; mitigates blame). [cite_start]<cite>[cite: 43]</cite></li>
-                            <li>"<strong>Like all innovative software</strong>, it has bugs" (Grants the social good of "being innovative" and reframes the bugs as a <strong>sign</strong> of that good). [cite_start]<cite>[cite: 44]</cite></li>
+                            <li>"Microsoft <strong>loaded</strong> its OS with bugs" (Assigns blame; denies the social good of responsibility).</li>
+                            <li>"Microsoft's OS <strong>is loaded</strong> with bugs" (Passive voice; mitigates blame).</li>
+                            <li>"<strong>Like all innovative software</strong>, it has bugs" (Grants the social good of "being innovative" and reframes the bugs as a <strong>sign</strong> of that good).</li>
                         </ul>
                     </li>
                 </ul>
-                <div class="da-question"><strong>DA Question:</strong> What perspective on social goods (what's "normal," "good," "high status," "blame-worthy," etc.) is this communicating? [cite_start]<cite>[cite: 45]</cite></div>
+                <div class="da-question"><strong>DA Question:</strong> What perspective on social goods (what's "normal," "good," "high status," "blame-worthy," etc.) is this communicating?</div>
 
-                <p><strong>6. [cite_start]Connections (Building Connections)</strong> <cite>[cite: 46]</cite></p>
+                <p><strong>6. Connections (Building Connections)</strong></p>
                 <ul>
-                    <li><strong>What it is:</strong> Using language to connect or disconnect things; to make one thing relevant or irrelevant to another. [cite_start]<cite>[cite: 47]</cite></li>
-                    <li><strong>Example:</strong> Using the single term "fundamentalism" to describe both Christian and Islamic groups <strong>builds a connection</strong> between them, implying they are the same type of phenomenon (whether they are or not). [cite_start]<cite>[cite: 48]</cite></li>
+                    <li><strong>What it is:</strong> Using language to connect or disconnect things; to make one thing relevant or irrelevant to another.</li>
+                    <li><strong>Example:</strong> Using the single term "fundamentalism" to describe both Christian and Islamic groups <strong>builds a connection</strong> between them, implying they are the same type of phenomenon (whether they are or not).</li>
                 </ul>
-                <div class="da-question"><strong>DA Question:</strong> How does this piece of language connect or disconnect things, or make one thing relevant to another? [cite_start]<cite>[cite: 49]</cite></div>
+                <div class="da-question"><strong>DA Question:</strong> How does this piece of language connect or disconnect things, or make one thing relevant to another?</div>
 
-                <p><strong>7. [cite_start]Sign Systems & Knowledge (Building Privilege)</strong> <cite>[cite: 50]</cite></p>
+                <p><strong>7. Sign Systems & Knowledge (Building Privilege)</strong></p>
                 <ul>
-                    <li><strong>What it is:</strong> Using language to privilege (treat as more valuable) or deprivilege (treat as less valuable) specific <strong>sign systems</strong> (e.g., technical language vs. everyday language; words vs. images) or <strong>ways of knowing</strong> (e.g., science vs. common sense; professor's knowledge vs. teacher's knowledge). [cite_start]<cite>[cite: 51]</cite></li>
-                    <li><strong>Example:</strong> In a meeting, acting in a way that makes the "knowledge and language of lawyers" the only valid way to discuss an issue, thus deprivileging "common sense" or other forms of expertise. [cite_start]<cite>[cite: 52]</cite></li>
+                    <li><strong>What it is:</strong> Using language to privilege (treat as more valuable) or deprivilege (treat as less valuable) specific <strong>sign systems</strong> (e.g., technical language vs. everyday language; words vs. images) or <strong>ways of knowing</strong> (e.g., science vs. common sense; professor's knowledge vs. teacher's-knowledge).</li>
+                    <li><strong>Example:</strong> In a meeting, acting in a way that makes the "knowledge and language of lawyers" the only valid way to discuss an issue, thus deprivileging "common sense" or other forms of expertise.</li>
                 </ul>
-                <div class="da-question"><strong>DA Question:</strong> How does this language privilege or deprivilege specific sign systems or ways of knowing? [cite_start]<cite>[cite: 53]</cite></div>
+                <div class="da-question"><strong>DA Question:</strong> How does this language privilege or deprivilege specific sign systems or ways of knowing?</div>
             </div>
 
             <button class="accordion">3. Key Example: The Karen & Sara Transcript</button>
             <div class="panel">
-                <p>This example shows how all seven tasks work together in a real conversation. [cite_start]<cite>[cite: 55]</cite></p>
-                <p><strong>Context:</strong> A tense "town-gown" (university vs. local) relationship. A university professor (Sara) gets access to a public school teacher's (Karen) class by going through an administrator, which is a breach of protocol and seen as a power move. [cite_start]<cite>[cite: 56]</cite></p>
-                <p><strong>The Key Quote (Karen):</strong> "I <strong>DID</strong> call her. And we <strong>BOTH</strong> expected to be around for the Summer Institute... I <strong>DID</strong> participate in it, but <strong>SARA</strong> wasn't able to do <strong>THAT</strong>." [cite_start]<cite>[cite: 57]</cite></p>
-                [cite_start]<p><strong>The 7-Task Analysis:</strong> <cite>[cite: 58]</cite></p>
+                <p>This example shows how all seven tasks work together in a real conversation.</p>
+                <p><strong>Context:</strong> A tense "town-gown" (university vs. local) relationship. A university professor (Sara) gets access to a public school teacher's (Karen) class by going through an administrator, which is a breach of protocol and seen as a power move.</p>
+                <p><strong>The Key Quote (Karen):</strong> "I <strong>DID</strong> call her. And we <strong>BOTH</strong> expected to be around for the Summer Institute... I <strong>DID</strong> participate in it, but <strong>SARA</strong> wasn't able to do <strong>THAT</strong>."</p>
+                <p><strong>The 7-Task Analysis:</strong></p>
                 <ol>
-                    <li><strong>Significance:</strong> Karen uses stress ("DID," "BOTH," "SARA") and a "but..." contrast to make Sara's absence <strong>highly significant</strong> and not just a trivial fact. [cite_start]<cite>[cite: 59]</cite></li>
-                    <li><strong>Practices:</strong> She is officially "giving a history" of the project, but she is <strong>using</strong> this practice to do social work (i.e., establish a hierarchy). [cite_start]<cite>[cite: 60]</cite></li>
-                    <li><strong>Identities:</strong> She builds her <strong>own</strong> identity as a responsible, proactive "do-er" while building Sara's identity as a "not-doer" who is less committed. [cite_start]<cite>[cite: 61]</cite></li>
-                    <li><strong>Relationships:</strong> She builds a "distanced but not particularly deferential" relationship with Sara (who is sitting right there). [cite_start]<cite>[cite: 62]</cite></li>
-                    <li><strong>Politics:</strong> She denies Sara the "social good" of being a responsible partner, which is part of the larger <strong>political</strong> struggle over status between the university and the teachers. [cite_start]<cite>[cite: 63]</cite></li>
-                    <li><strong>Connections:</strong> She explicitly <strong>connects</strong> her action ("I DID participate") to Sara's inaction ("but SARA wasn't") to create a damning contrast. [cite_start]<cite>[cite: 64]</cite></li>
-                    <li><strong>Sign Systems & Knowledge:</strong> This exchange is the <strong>start</strong> of a long struggle over whose knowledge (professor's "research" vs. teacher's "classroom" knowledge) will be privileged in the project. [cite_start]<cite>[cite: 65]</cite></li>
+                    <li><strong>Significance:</strong> Karen uses stress ("DID," "BOTH," "SARA") and a "but..." contrast to make Sara's absence <strong>highly significant</strong> and not just a trivial fact.</li>
+                    <li><strong>Practices:</strong> She is officially "giving a history" of the project, but she is <strong>using</strong> this practice to do social work (i.e., establish a hierarchy).</li>
+                    <li><strong>Identities:</strong> She builds her <strong>own</strong> identity as a responsible, proactive "do-er" while building Sara's identity as a "not-doer" who is less committed.</li>
+                    <li><strong>Relationships:</strong> She builds a "distanced but not particularly deferential" relationship with Sara (who is sitting right there).</li>
+                    <li><strong>Politics:</strong> She denies Sara the "social good" of being a responsible partner, which is part of the larger <strong>political</strong> struggle over status between the university and the teachers.</li>
+                    <li><strong>Connections:</strong> She explicitly <strong>connects</strong> her action ("I DID participate") to Sara's inaction ("but SARA wasn't") to create a damning contrast.</li>
+                    <li><strong>Sign Systems & Knowledge:</strong> This exchange is the <strong>start</strong> of a long struggle over whose knowledge (professor's "research" vs. teacher's "classroom" knowledge) will be privileged in the project.</li>
                 </ol>
             </div>
 
             <button class="accordion">4. (NEW) Key Methods & Concepts</button>
             <div class="panel">
-                <p>These are important "meta" ideas from the chapter about <strong>how</strong> to do discourse analysis. [cite_start]<cite>[cite: 67]</cite></p>
-                <p><strong>Language as "Old and New":</strong> Language is like music. [cite_start]<cite>[cite: 68]</cite></p>
+                <p>These are important "meta" ideas from the chapter about <strong>how</strong> to do discourse analysis.</p>
+                <p><strong>Language as "Old and New":</strong> Language is like music.</p>
                 <ul>
-                    <li>Every time we speak, what we say is <strong>"old"</strong> because it follows the shared <strong>conventions</strong> and <strong>grammar</strong> of our social languages. [cite_start]<cite>[cite: 69]</cite></li>
-                    [cite_start]<li>At the same time, it is <strong>"new"</strong> because it is a <strong>unique performance</strong> by an individual, expressing their specific meaning and style <cite>[cite: 70]</cite>.</li>
+                    <li>Every time we speak, what we say is <strong>"old"</strong> because it follows the shared <strong>conventions</strong> and <strong>grammar</strong> of our social languages.</li>
+                    <li>At the same time, it is <strong>"new"</strong> because it is a <strong>unique performance</strong> by an individual, expressing their specific meaning and style.</li>
                 </ul>
-                <p><strong>Analysis is Hypothesis-Driven:</strong> Discourse analysis is an empirical investigation, not math. [cite_start]<cite>[cite: 71]</cite></p>
+                <p><strong>Analysis is Hypothesis-Driven:</strong> Discourse analysis is an empirical investigation, not math.</p>
                 <ul>
-                    <li>The goal is to formulate <strong>hypotheses</strong>, not "definitive proof." [cite_start]<cite>[cite: 72]</cite></li>
-                    [cite_start]<li>You must always be open to disconfirming evidence <cite>[cite: 73]</cite>.</li>
+                    <li>The goal is to formulate <strong>hypotheses</strong>, not "definitive proof."</li>
+                    <li>You must always be open to disconfirming evidence.</li>
                 </ul>
-                <p><strong>Context-to-Language-to-Context:</strong> Analysis is a "two-way process." [cite_start]You use information about the <strong>context</strong> to form hypotheses about the <strong>language</strong>, and then you use a close study of the <strong>language</strong> to learn more about the <strong>context</strong> and how the speakers were interpreting it <cite>[cite: 74]</cite>.</p>
-                [cite_start]<p><strong>The "Alternative Formulations" Test:</strong> A key method to figure out what a piece of language is <strong>doing</strong> is to ask: <strong>"In what other ways could this have been said?"</strong> <cite>[cite: 75]</cite></p>
+                <p><strong>Context-to-Language-to-Context:</strong> Analysis is a "two-way process." You use information about the <strong>context</strong> to form hypotheses about the <strong>language</strong>, and then you use a close study of the <strong>language</strong> to learn more about the <strong>context</strong> and how the speakers were interpreting it.</p>
+                <p><strong>The "Alternative Formulations" Test:</strong> A key method to figure out what a piece of language is <strong>doing</strong> is to ask: <strong>"In what other ways could this have been said?"</strong></p>
                 <ul>
-                    [cite_start]<li>By comparing the actual words to the alternatives, you can see the specific social work being done <cite>[cite: 76]</cite>.</li>
+                    <li>By comparing the actual words to the alternatives, you can see the specific social work being done.</li>
                 </ul>
-                [cite_start]<p><strong>Check for Reactions:</strong> You must check the data for how others <strong>react</strong> to the language (e.g., Prof. Vogel's attempted interruption), as this provides evidence for your hypothesis about what was being "built" <cite>[cite: 77]</cite>.</p>
+                <p><strong>Check for Reactions:</strong> You must check the data for how others <strong>react</strong> to the language (e.g., Prof. Vogel's attempted interruption), as this provides evidence for your hypothesis about what was being "built".</p>
             </div>
 
         </div>
@@ -383,152 +402,162 @@
             
             <button class="accordion">1. Introduction: From Building Tasks to Tools of Inquiry</button>
             <div class="panel">
-                <p>This chapter introduces <strong>four new "Tools of Inquiry"</strong>. [cite_start]<cite>[cite: 80]</cite> These tools are used to analyze <strong>how</strong> the <strong>Seven Building Tasks</strong> (from Chapter 3) are accomplished in specific instances of language in use. [cite_start]<cite>[cite: 81]</cite></p>
+                <p>This chapter introduces <strong>four new "Tools of Inquiry"</strong>. These tools are used to analyze <strong>how</strong> the <strong>Seven Building Tasks</strong> (from Chapter 3) are accomplished in specific instances of language in use.</p>
             </div>
 
             <button class="accordion">2. 🛠️ Tool 1: The Social Language Tool</button>
             <div class="panel">
-                <p>This tool focuses on how we use different <strong>varieties</strong> of language to signal our identity. [cite_start]<cite>[cite: 83][cite_start]</cite> To understand this, the author first defines three key terms: <cite>[cite: 84]</cite></p>
+                <p>This tool focuses on how we use different <strong>varieties</strong> of language to signal our identity. To understand this, the author first defines three key terms:</p>
                 <ul>
-                    <li><strong>Dialect:</strong> A variety of language associated with a specific <strong>region or social/ethnic group</strong>. [cite_start]<cite>[cite: 85]</cite>
+                    <li><strong>Dialect:</strong> A variety of language associated with a specific <strong>region or social/ethnic group</strong>.
                         <ul>
-                            <li>Examples: Southern English (regional), African American Vernacular English (ethnic). [cite_start]<cite>[cite: 86]</cite></li>
+                            <li>Examples: Southern English (regional), African American Vernacular English (ethnic).</li>
                         </ul>
                     </li>
-                    <li><strong>Standard English:</strong> This is also a dialect, but it's the one associated with power, education, and media; [cite_start]<cite>[cite: 87]</cite> it is <strong>not</strong> linguistically superior to other dialects. [cite_start]<cite>[cite: 88]</cite></li>
-                    <li><strong>Register:</strong> A variety of language used for a particular <strong>purpose, situation, or level of formality</strong>. [cite_start]<cite>[cite: 89]</cite>
+                    <li><strong>Standard English:</strong> This is also a dialect, but it's the one associated with power, education, and media; it is <strong>not</strong> linguistically superior to other dialects.</li>
+                    <li><strong>Register:</strong> A variety of language used for a particular <strong>purpose, situation, or level of formality</strong>.
                         <ul>
-                            <li>Examples: Formal legal language, academic writing, or the informal, "special purpose" language of gamers or biologists. [cite_start]<cite>[cite: 90]</cite></li>
+                            <li>Examples: Formal legal language, academic writing, or the informal, "special purpose" language of gamers or biologists.</li>
                         </ul>
                     </li>
                 </ul>
                 <div class="key-concept">
-                    [cite_start]<p><strong>🔑 Social Language (The Author's Umbrella Term):</strong> <cite>[cite: 91]</cite></p>
+                    <p><strong>🔑 Social Language (The Author's Umbrella Term):</strong></p>
                     <ul>
-                        <li><strong>Definition:</strong> Any distinctive use of language—whether a dialect or a register—that is used to <strong>enact and recognize a socially distinctive identity</strong>. [cite_start]<cite>[cite: 92]</cite></li>
-                        <li>It's a term that "cuts across all forms of language variation". [cite_start]<cite>[cite: 93]</cite></li>
+                        <li><strong>Definition:</strong> Any distinctive use of language—whether a dialect or a register—that is used to <strong>enact and recognize a socially distinctive identity</strong>.</li>
+                        <li>It's a term that "cuts across all forms of language variation".</li>
                     </ul>
                 </div>
-                <div class="da-question"><strong>The Tool (as a question):</strong> "How do people use different varieties of language to enact and recognize different identities in different settings?". [cite_start]<cite>[cite: 94]</cite></div>
-                <p><strong>Example:</strong> A student saying "Hornworms sure vary a lot in how big they get" (vernacular social language) vs. writing "Hornworm growth exhibits a significant amount of variation" (technical social language). [cite_start]<cite>[cite: 95]</cite></p>
+                <div class="da-question"><strong>The Tool (as a question):</strong> "How do people use different varieties of language to enact and recognize different identities in different settings?".</div>
+                <p><strong>Example:</strong> A student saying "Hornworms sure vary a lot in how big they get" (vernacular social language) vs. writing "Hornworm growth exhibits a significant amount of variation" (technical social language).</p>
             </div>
 
             <button class="accordion">3. 🛠️ Tool 2: The "Big D" Discourse Tool</button>
             <div class="panel">
-                <p>This tool expands on the "Social Language" tool by including non-language elements. [cite_start]<cite>[cite: 97]</cite></p>
-                [cite_start]<p><strong>Key Contrast:</strong> <cite>[cite: 98]</cite></p>
+                <p>This tool expands on the "Social Language" tool by including non-language elements.</p>
+                <p><strong>Key Contrast:</strong></p>
                 <ul>
-                    <li><strong>"little d" discourse:</strong> Refers only to <strong>language in use</strong> (e.g., conversations, stories). [cite_start]<cite>[cite: 99]</cite></li>
-                    <li><strong>"Big D" Discourse:</strong> Refers to a complete <strong>"identity kit"</strong> or "form of life". [cite_start]<cite>[cite: 100]</cite>
+                    <li><strong>"little d" discourse:</strong> Refers only to <strong>language in use</strong> (e.g., conversations, stories).</li>
+                    <li><strong>"Big D" Discourse:</strong> Refers to a complete <strong>"identity kit"</strong> or "form of life".
                         <ul>
-                            <li>It's the <strong>full performance</strong> of an identity, integrating words, acts, values, beliefs, attitudes, gestures, body positions, and clothes. [cite_start]<cite>[cite: 101]</cite></li>
+                            <li>It's the <strong>full performance</strong> of an identity, integrating words, acts, values, beliefs, attitudes, gestures, body positions, and clothes.</li>
                         </ul>
                     </li>
                 </ul>
-                <p><strong>The Core Idea:</strong> You cannot just "talk the talk," you must also "walk the walk". [cite_start]<cite>[cite: 102]</cite> Being a "scientist" or "skateboarder" involves a specific way of talking, acting, dressing, and valuing. [cite_start]<cite>[cite: 103]</cite></p>
-                <div class="da-question"><strong>The Tool (as a question):</strong> "How do people use language and non-verbal things to enact and recognize different socially significant and historically created Discourses?". [cite_start]<cite>[cite: 104]</cite></div>
+                <p><strong>The Core Idea:</strong> You cannot just "talk the talk," you must also "walk the walk". Being a "scientist" or "skateboarder" involves a specific way of talking, acting, dressing, and valuing.</p>
+                <div class="da-question"><strong>The Tool (as a question):</strong> "How do people use language and non-verbal things to enact and recognize different socially significant and historically created Discourses?".</div>
             </div>
 
             <button class="accordion">4. 🛠️ Tool 3: The Intertextuality Tool</button>
             <div class="panel">
-                <p><strong>Definition:</strong> The relationship <strong>between texts</strong>, showing how any given text (speech, writing, or media) refers to, quotes, alludes to, or is influenced by <strong>other texts</strong>. [cite_start]<cite>[cite: 106]</cite></p>
+                <p><strong>Definition:</strong> The relationship <strong>between texts</strong>, showing how any given text (speech, writing, or media) refers to, quotes, alludes to, or is influenced by <strong>other texts</strong>.</p>
                 <ul>
-                    <li><strong>"Text" (Broad Definition):</strong> Any structured arrangement of symbols that conveys meaning, including written documents, spoken language, images, audio, and video. [cite_start]<cite>[cite: 107]</cite></li>
+                    <li><strong>"Text" (Broad Definition):</strong> Any structured arrangement of symbols that conveys meaning, including written documents, spoken language, images, audio, and video.</li>
                 </ul>
-                <div class="da-question"><strong>The Tool (as a question):</strong> "How do speakers and writers (and media designers) allude to, quote, or otherwise relate to other texts?". [cite_start]<cite>[cite: 108]</cite></div>
-                <p><strong>Example:</strong> A <em>Wired</em> magazine article using the headline, "You got a problem with that?" [cite_start]<cite>[cite: 109]</cite> This is an intertextual reference to "tough-guy" talk from movies. [cite_start]<cite>[cite: 110]</cite></p>
+                <div class="da-question"><strong>The Tool (as a question):</strong> "How do speakers and writers (and media designers) allude to, quote, or otherwise relate to other texts?".</div>
+                <p><strong>Example:</strong> A <em>Wired</em> magazine article using the headline, "You got a problem with that?" This is an intertextual reference to "tough-guy" talk from movies.</p>
             </div>
 
             <button class="accordion">5. 🛠️ Tool 4: The "Big C" Conversation Tool</button>
             <div class="panel">
-                <p><strong>Definition:</strong> Refers to the <strong>overarching, society-wide dialogues</strong> about major themes, debates, or issues that persist over time. [cite_start]<cite>[cite: 112]</cite></p>
+                <p><strong>Definition:</strong> Refers to the <strong>overarching, society-wide dialogues</strong> about major themes, debates, or issues that persist over time.</p>
                 <ul>
-                    <li>Examples: The "Conversations" about justice, democracy, climate change, or abortion. [cite_start]<cite>[cite: 113]</cite></li>
+                    <li>Examples: The "Conversations" about justice, democracy, climate change, or abortion.</li>
                 </ul>
-                <p><strong>Key Connection:</strong> This is "a type of intertextuality". When you speak, you are often alluding to one of these massive, ongoing Conversations. [cite_start]<cite>[cite: 114]</cite></p>
-                <p><strong>Example:</strong> We understand "Smoking is associated with health problems" to mean smoking <em>causes</em> problems (and not the reverse) because we are all familiar with the long-running public "Conversation" about the dangers of smoking. [cite_start]<cite>[cite: 115]</cite></p>
-                <div class="da-question"><strong>The Tool (as a question):</strong> "How do speakers, writers, and media designers allude to or relate to themes, debates, or motifs that have been the focus of much talk... in... society...?". [cite_start]<cite>[cite: 116]</cite></div>
+                <p><strong>Key Connection:</strong> This is "a type of intertextuality". When you speak, you are often alluding to one of these massive, ongoing Conversations.</p>
+                <p><strong>Example:</strong> We understand "Smoking is associated with health problems" to mean smoking <em>causes</em> problems (and not the reverse) because we are all familiar with the long-running public "Conversation" about the dangers of smoking.</p>
+                <div class="da-question"><strong>The Tool (as a question):</strong> "How do speakers, writers, and media designers allude to or relate to themes, debates, or motifs that have been the focus of much talk... in... society...?".</div>
             </div>
 
             <button class="accordion">6. Deeper Dive: Understanding "Big D" Discourses</button>
             <div class="panel">
-                <p>This is the most critical concept in the chapter. [cite_start]<cite>[cite: 118]</cite></p>
-                <p><strong>The "who" and the "what":</strong> An utterance is only meaningful when it communicates a <strong>"who"</strong> (a socially-situated identity) and a <strong>"what"</strong> (a socially-situated practice/activity). [cite_start]<cite>[cite: 119]</cite> It's best to see this as an integrated <strong>"who-doing-what"</strong>. [cite_start]<cite>[cite: 120]</cite></p>
+                <p>This is the most critical concept in the chapter.</p>
+                <p><strong>The "who" and the "what":</strong> An utterance is only meaningful when it communicates a <strong>"who"</strong> (a socially-situated identity) and a <strong>"what"</strong> (a socially-situated practice/activity). It's best to see this as an integrated <strong>"who-doing-what"</strong>.</p>
                 <div class="key-concept">
-                    <p><strong>🔑 The "Recognition" Principle:</strong> The <strong>key</strong> to Discourses is <strong>"recognition"</strong>. [cite_start]<cite>[cite: 121]</cite></p>
+                    <p><strong>🔑 The "Recognition" Principle:</strong> The <strong>key</strong> to Discourses is <strong>"recognition"</strong>.</p>
                     <ul>
-                        <li>If you put language, action, values, and props together in a way that <strong>others recognize</strong> as a specific identity (e.g., "competent lawyer," "gamer"), you have successfully "pulled off" that Discourse. [cite_start]<cite>[cite: 122]</cite></li>
+                        <li>If you put language, action, values, and props together in a way that <strong>others recognize</strong> as a specific identity (e.g., "competent lawyer," "gamer"), you have successfully "pulled off" that Discourse.</li>
                     </ul>
                 </div>
-                <p><strong>Identity Crisis (Key Example):</strong> The <strong>Athabaskan student</strong> illustrates a conflict between Discourses. [cite_start]<cite>[cite: 123]</cite></p>
+                <p><strong>Identity Crisis (Key Example):</strong> The <strong>Athabaskan student</strong> illustrates a conflict between Discourses.</p>
                 <ul>
-                    <li>The school-based Discourse of "writing an essay" requires a "major self-display" and "decontextualized" language, which directly conflicts with the Athabaskan Discourse, where silence is preferred when the audience relationship is unknown. [cite_start]<cite>[cite: 124]</cite></li>
+                    <li>The school-based Discourse of "writing an essay" requires a "major self-display" and "decontextualized" language, which directly conflicts with the Athabaskan Discourse, where silence is preferred when the audience relationship is unknown.</li>
                 </ul>
-                <p><strong>Analogy: Discourses as "Kits":</strong> Think of the <strong>Barbie-doll Discourse</strong> as a "kit". [cite_start]<cite>[cite: 125]</cite></p>
+                <p><strong>Analogy: Discourses as "Kits":</strong> Think of the <strong>Barbie-doll Discourse</strong> as a "kit".</p>
                 <ul>
-                    <li>This kit includes the doll's body shape, clothes, accessories, values, and ways of talking. [cite_start]<cite>[cite: 126]</cite></li>
-                    <li>Society provides "innumerable kits" (scientist, gamer, feminist, etc.) that we use to live out our social lives. [cite_start]<cite>[cite: 127]</cite></li>
+                    <li>This kit includes the doll's body shape, clothes, accessories, values, and ways of talking.</li>
+                    <li>Society provides "innumerable kits" (scientist, gamer, feminist, etc.) that we use to live out our social lives.</li>
                 </ul>
-                <p><strong>Discourses are Not Fixed Units:</strong> They have no clear boundaries. [cite_start]<cite>[cite: 128]</cite></p>
+                <p><strong>Discourses are Not Fixed Units:</strong> They have no clear boundaries.</p>
                 <ul>
-                    <li>They can <strong>split</strong> (e.g., "natural philosophy" split into philosophy and physics). [cite_start]<cite>[cite: 129]</cite></li>
-                    <li>They can <strong>meld</strong> or hybridize (e.g., mixed-ethnic gangs creating a "borderland Discourse"). [cite_start]<cite>[cite: 130]</cite></li>
-                    <li>They <strong>emerge and die</strong> (e.g., the anti-racist skinhead Discourse died because it was confused with the racist one). [cite_start]<cite>[cite: 131]</cite></li>
-                    <li>They are <strong>defined in relation</strong> to other Discourses (e.g., the "new male" Discourse emerged in response to feminism). [cite_start]<cite>[cite: 132]</cite></li>
-                    <li>They don't have to be "grand" (e.g., the two different Discourses at opposite ends of a single bar). [cite_start]<cite>[cite: 133]</cite></li>
+                    <li>They can <strong>split</strong> (e.g., "natural philosophy" split into philosophy and physics).</li>
+                    <li>They can <strong>meld</strong> or hybridize (e.g., mixed-ethnic gangs creating a "borderland Discourse").</li>
+                    <li>They <strong>emerge and die</strong> (e.g., the anti-racist skinhead Discourse died because it was confused with the racist one).</li>
+                    <li>They are <strong>defined in relation</strong> to other Discourses (e.g., the "new male" Discourse emerged in response to feminism).</li>
+                    <li>They don't have to be "grand" (e.g., the two different Discourses at opposite ends of a single bar).</li>
                 </ul>
             </div>
-
+            
             <button class="accordion">7. Structured Answers for Discussion Questions</button>
             <div class="panel">
-                <p><strong>1. [cite_start]The Core Distinction (Definition & Contrast)</strong> <cite>[cite: 135]</cite></p>
-                [cite_start]<p><em>"Discuss the author's concept of <strong>'Big D' Discourse'</strong>. How is it different from <strong>'little d' discourse'</strong> and a <strong>'Social Language'</strong>? Finally, explain what the author means by describing a Discourse as an <strong>'identity kit'</strong>."</em> <cite>[cite: 136]</cite></p>
-                <ul>
-                    <li>A <strong>"Big D" Discourse</strong> is the complete "identity kit" for being a certain "kind of person," like a scientist, gamer, or gang member. [cite_start]<cite>[cite: 137]</cite></li>
-                    [cite_start]<li>It's different from the other terms in this way: <cite>[cite: 138]</cite>
-                        <ul>
-                            <li><strong>"little d" discourse:</strong> This is <strong>only language-in-use</strong> (e.g., a conversation or a story). [cite_start]<cite>[cite: 139]</cite></li>
-                            <li><strong>Social Language:</strong> This is a <strong>component</strong> of a Discourse. [cite_start]<cite>[cite: 140]</cite> It's the specific <strong>style of language</strong> (a dialect or register) that a person uses to enact an identity. [cite_start]<cite>[cite: 141]</cite></li>
-                            <li><strong>"Big D" Discourse:</strong> This is the <strong>total package</strong>. [cite_start]<cite>[cite: 142]</cite> It's the Social Language (the "talk") <strong>PLUS</strong> all the non-language "stuff": how you act, dress, think, value, and use props (the "walk"). [cite_start]<cite>[cite: 143]</cite></li>
-                        </ul>
-                    </li>
-                    <li>An <strong>"identity kit"</strong> is the author's analogy for all the required parts of a Discourse. [cite_start]<cite>[cite: 144]</cite> Like a Barbie-doll "kit" contains the doll, the clothes, the accessories, and the values to "be Barbie", a "scientist kit" contains the lab coat, the technical language, the values (e.g., objectivity), and the tools needed to "be a scientist." [cite_start]<cite>[cite: 145]</cite></li>
-                </ul>
+                <p>Here are the memorizable, structured answers for those four likely discussion questions.</p>
 
-                <p><strong>2. [cite_start]The Key Mechanism (Recognition)</strong> <cite>[cite: 146]</cite></p>
-                [cite_start]<p><em>"Discuss the principle of <strong>'recognition'</strong> as the central mechanism for a 'Big D' Discourse. What does it mean to successfully 'pull off' a Discourse, and what happens when this 'recognition work' fails?"</em> <cite>[cite: 147]</cite></p>
-                <ul>
-                    <li>The <strong>"key to Discourses is 'recognition'"</strong>. It's the central mechanism. [cite_start]<cite>[cite: 148]</cite></li>
-                    <li><strong>"Pulling off" a Discourse:</strong> You successfully "pull off" a Discourse when you combine all the parts of your "identity kit" (language, actions, values, props, etc.) in such a way that <strong>other people recognize you</strong> as a specific "kind of person" (a <strong>who</strong>) doing a specific <strong>activity</strong> (a <strong>what</strong>). [cite_start]<cite>[cite: 149]</cite></li>
-                    <li><strong>When Recognition Fails:</strong> "If it is not recognizable, then you are not 'in' the Discourse". [cite_start]<cite>[cite: 150]</cite> The Discourse itself can even die. The text gives the example of the <strong>anti-racist skinhead Discourse</strong>, which was "dying out" because people, including the police, <strong>failed to recognize</strong> its members and confused them with the separate racist neo-Nazi Discourse. [cite_start]<cite>[cite: 151]</cite></li>
-                </ul>
+                <div class="structured-answer">
+                    <p><strong>1. The Core Distinction (Definition & Contrast)</strong></p>
+                    <p class="structured-answer-q"><em>"Discuss the author's concept of <strong>'Big D' Discourse'</strong>. How is it different from <strong>'little d' discourse'</strong> and a <strong>'Social Language'</strong>? Finally, explain what the author means by describing a Discourse as an <strong>'identity kit'</strong>."</em></p>
+                    <ul>
+                        <li>A <strong>"Big D" Discourse</strong> is the complete "identity kit" for being a certain "kind of person," like a scientist, gamer, or gang member.</li>
+                        <li>It's different from the other terms in this way:
+                            <ul>
+                                <li><strong>"little d" discourse:</strong> This is <strong>only language-in-use</strong> (e.g., a conversation or a story).</li>
+                                <li><strong>Social Language:</strong> This is a <strong>component</strong> of a Discourse. It's the specific <strong>style of language</strong> (a dialect or register) that a person uses to enact an identity.</li>
+                                <li><strong>"Big D" Discourse:</strong> This is the <strong>total package</strong>. It's the Social Language (the "talk") <strong>PLUS</strong> all the non-language "stuff": how you act, dress, think, value, and use props (the "walk").</li>
+                            </ul>
+                        </li>
+                        <li>An <strong>"identity kit"</strong> is the author's analogy for all the required parts of a Discourse. Like a Barbie-doll "kit" contains the doll, the clothes, the accessories, and the values to "be Barbie", a "scientist kit" contains the lab coat, the technical language, the values (e.g., objectivity), and the tools needed to "be a scientist."</li>
+                    </ul>
+                </div>
 
-                <p><strong>3. [cite_start]The Key Problem (Conflict & Identity Crisis)</strong> <cite>[cite: 152]</cite></p>
-                [cite_start]<p><em>"Using the Scollon and Scollon (1981) study of <strong>Athabaskan students</strong>, discuss how Discourses can conflict. Explain what the author means by an <strong>'identity crisis'</strong> and how the Discourse of 'school-based essayist prose' is 'mutually exclusive' with the Athabaskan Discourse."</em> <cite>[cite: 153]</cite></p>
-                <ul>
-                    <li>The Athabaskan students faced an <strong>"identity crisis"</strong> because the "way of being" (Discourse) required by their school was <strong>"mutually exclusive"</strong> with their native "way of being". [cite_start]<cite>[cite: 154]</cite></li>
-                    [cite_start]<li>This conflict happened for two main reasons: <cite>[cite: 155]</cite>
-                        <ol>
-                            <li><strong>Self-Display:</strong> The school's "essayist prose" Discourse required the student to make a <strong>"major self-display"</strong>. [cite_start]<cite>[cite: 156]</cite> In the Athabaskan Discourse, this is only appropriate for a person in a <strong>dominant</strong> position, which the student is not. [cite_start]<cite>[cite: 157]</cite></li>
-                            <li><strong>Audience:</strong> The school Discourse requires writing for a "decontextualized" or <strong>unknown</strong> audience. [cite_start]<cite>[cite: 158]</cite> In the Athabaskan Discourse, when the relationship with the audience is unknown, the preferred response is <strong>"silence"</strong>. [cite_start]<cite>[cite: 159]</cite></li>
-                        </ol>
-                    </li>
-                    <li>Therefore, to "pull off" the identity of a "good student," the Athabaskan child was forced to act in a way that was <strong>not</strong> a "good Athabaskan," causing a "crisis in identity". [cite_start]<cite>[cite: 160]</cite></li>
-                </ul>
+                <div class="structured-answer">
+                    <p><strong>2. The Key Mechanism (Recognition)</strong></p>
+                    <p class="structured-answer-q"><em>"Discuss the principle of <strong>'recognition'</strong> as the central mechanism for a 'Big D' Discourse. What does it mean to successfully 'pull off' a Discourse, and what happens when this 'recognition work' fails?"</em></p>
+                    <ul>
+                        <li>The <strong>"key to Discourses is 'recognition'"</strong>. It's the central mechanism.</li>
+                        <li><strong>"Pulling off" a Discourse:</strong> You successfully "pull off" a Discourse when you combine all the parts of your "identity kit" (language, actions, values, props, etc.) in such a way that <strong>other people recognize you</strong> as a specific "kind of person" (a <strong>who</strong>) doing a specific <strong>activity</strong> (a <strong>what</strong>).</li>
+                        <li><strong>When Recognition Fails:</strong> "If it is not recognizable, then you are not 'in' the Discourse". The Discourse itself can even die. The text gives the example of the <strong>anti-racist skinhead Discourse</strong>, which was "dying out" because people, including the police, <strong>failed to recognize</strong> its members and confused them with the separate racist neo-Nazi Discourse.</li>
+                    </ul>
+                </div>
 
-                <p><strong>4. [cite_start]The Dynamic Nature (Boundaries & Change)</strong> <cite>[cite: 161]</cite></p>
-                [cite_start]<p><em>"The author argues that Discourses are not fixed 'units' and have <strong>'no discrete boundaries'</strong>. Discuss this idea. How do Discourses change, and what is their relationship to other Discourses? Use examples from the text, such as Discourses <strong>splitting, melding, or dying</strong>."</em> <cite>[cite: 162]</cite></p>
-                <ul>
-                    <li>Discourses are not static "units" because they are <strong>historical</strong>, and people are always contesting and changing them; [cite_start]<cite>[cite: 163]</cite> their "boundaries are always contestable". [cite_start]<cite>[cite: 164]</cite></li>
-                    <li>Discourses are dynamic and defined in relation to each other. [cite_start]They can: <cite>[cite: 165]</cite>
-                        <ul>
-                            <li><strong>Split:</strong> A single Discourse can divide. For example, medieval <strong>"natural philosophy" split</strong> into philosophy, physics, and other sciences. [cite_start]<cite>[cite: 166]</cite></li>
-                            <li><strong>Meld (Hybridize):</strong> Two or more Discourses can combine. For example, different ethnic gangs <strong>"melded"</strong> to form new "borderland Discourses". [cite_start]<cite>[cite: 167]</cite></li>
-                            <li><strong>Die:</strong> A Discourse can "die" when it's no longer performed or recognized. [cite_start]<cite>[cite: 168]</cite> The <strong>anti-racist skinhead Discourse</strong> died because it was confused with the racist one. [cite_start]<cite>[cite: 169]</cite></li>
-                            <li><strong>Emerge in Response:</strong> New Discourses emerge in reaction to others. [cite_start]<cite>[cite: 170]</cite> The <strong>"new male" Discourse</strong> emerged in the 1970s in response to feminism, and in turn, it changed the feminist Discourse. [cite_start]<cite>[cite: 171]</cite></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="structured-answer">
+                    <p><strong>3. The Key Problem (Conflict & Identity Crisis)</strong></p>
+                    <p class="structured-answer-q"><em>"Using the Scollon and Scollon (1R1) study of <strong>Athabaskan students</strong>, discuss how Discourses can conflict. Explain what the author means by an <strong>'identity crisis'</strong> and how the Discourse of 'school-based essayist prose' is 'mutually exclusive' with the Athabaskan Discourse."</em></p>
+                    <ul>
+                        <li>The Athabaskan students faced an <strong>"identity crisis"</strong> because the "way of being" (Discourse) required by their school was <strong>"mutually exclusive"</strong> with their native "way of being".</li>
+                        <li>This conflict happened for two main reasons:
+                            <ol>
+                                <li><strong>Self-Display:</strong> The school's "essayist prose" Discourse required the student to make a <strong>"major self-display"</strong>. In the Athabaskan Discourse, this is only appropriate for a person in a <strong>dominant</strong> position, which the student is not.</li>
+                                <li><strong>Audience:</strong> The school Discourse requires writing for a "decontextualized" or <strong>unknown</strong> audience. In the Athabaskan Discourse, when the relationship with the audience is unknown, the preferred response is <strong>"silence"</strong>.</li>
+                            </ol>
+                        </li>
+                        <li>Therefore, to "pull off" the identity of a "good student," the Athabaskan child was forced to act in a way that was <strong>not</strong> a "good Athabaskan," causing a "crisis in identity".</li>
+                    </ul>
+                </div>
+
+                <div class="structured-answer">
+                    <p><strong>4. The Dynamic Nature (Boundaries & Change)</strong></p>
+                    <p class="structured-answer-q"><em>"The author argues that Discourses are not fixed 'units' and have <strong>'no discrete boundaries'</strong>. Discuss this idea. How do Discourses change, and what is their relationship to other Discourses? Use examples from the text, such as Discourses <strong>splitting, melding, or dying</strong>."</em></p>
+                    <ul>
+                        <li>Discourses are not static "units" because they are <strong>historical</strong>, and people are always contesting and changing them; their "boundaries are always contestable".</li>
+                        <li>Discourses are dynamic and defined in relation to each other. They can:
+                            <ul>
+                                <li><strong>Split:</strong> A single Discourse can divide. For example, medieval <strong>"natural philosophy" split</strong> into philosophy, physics, and other sciences.</li>
+                                <li><strong>Meld (Hybridize):</strong> Two or more Discourses can combine. For example, different ethnic gangs <strong>"melded"</strong> to form new "borderland Discourses".</li>
+                                <li><strong>Die:</strong> A Discourse can "die" when it's no longer performed or recognized. The <strong>anti-racist skinhead Discourse</strong> died because it was confused with the racist one.</li>
+                                <li><strong>Emerge in Response:</strong> New Discourses emerge in reaction to others. The <strong>"new male" Discourse</strong> emerged in the 1970s in response to feminism, and in turn, it changed the feminist Discourse.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </div>
@@ -537,60 +566,60 @@
             
             <button class="accordion">1. How Social Languages Work (The "Buggin' Me" Example)</button>
             <div class="panel">
-                <p>This section uses one person (a young African American woman) telling the same story (about an earache) to two different audiences to show how social languages enact identities. [cite_start]<cite>[cite: 228]</cite></p>
-                <p><strong>Text 1 (To Friends):</strong> Uses African American Vernacular English (AAVE). [cite_start]<cite>[cite: 229]</cite></p>
+                <p>This section uses one person (a young African American woman) telling the same story (about an earache) to two different audiences to show how social languages enact identities.</p>
+                <p><strong>Text 1 (To Friends):</strong> Uses African American Vernacular English (AAVE).</p>
                 <ul>
-                    <li><strong>Features:</strong> Repetition ("buggin' me"), vivid sound effects ("oooh oooh oooh oooh oooh"), and an informal, conversational style. [cite_start]<cite>[cite: 230]</cite></li>
-                    <li><strong>Function:</strong> An <strong>embodied performance</strong> that focuses on <strong>expressing emotion</strong> and personal, shared experience. [cite_start]<cite>[cite: 231]</cite></li>
-                    <li>She is being a "peer". [cite_start]<cite>[cite: 232]</cite></li>
+                    <li><strong>Features:</strong> Repetition ("buggin' me"), vivid sound effects ("oooh oooh oooh oooh oooh"), and an informal, conversational style.</li>
+                    <li><strong>Function:</strong> An <strong>embodied performance</strong> that focuses on <strong>expressing emotion</strong> and personal, shared experience.</li>
+                    <li>She is being a "peer".</li>
                 </ul>
-                <p><strong>Text 2 (To Researcher):</strong> Does not use AAVE. [cite_start]<cite>[cite: 233]</cite></p>
+                <p><strong>Text 2 (To Researcher):</strong> Does not use AAVE.</p>
                 <ul>
-                    <li><strong>Features:</strong> A clear setup ("after Edna an' me..."), specific informational details ("cotton... and some peroxide"), and a more formal (though still colloquial) narrative structure. [cite_start]<cite>[cite: 234]</cite></li>
-                    <li><strong>Function:</strong> An <strong>impersonal report</strong> that provides <strong>information</strong> and backgrounds emotion. [cite_start]<cite>[cite: 235]</cite></li>
-                    <li>She is being a "student being interviewed". [cite_start]<cite>[cite: 236]</cite></li>
+                    <li><strong>Features:</strong> A clear setup ("after Edna an' me..."), specific informational details ("cotton... and some peroxide"), and a more formal (though still colloquial) narrative structure.</li>
+                    <li><strong>Function:</strong> An <strong>impersonal report</strong> that provides <strong>information</strong> and backgrounds emotion.</li>
+                    <li>She is being a "student being interviewed".</li>
                 </ul>
-                [cite_start]<p><strong>Key Implications of this Example:</strong> <cite>[cite: 237]</cite></p>
+                <p><strong>Key Implications of this Example:</strong></p>
                 <ul>
-                    <li><strong>Co-construction:</strong> The speaker's identity is "co-constructed" by her and her audience. [cite_start]<cite>[cite: 238]</cite> The interviewer isn't interviewing the "same person" who talks to her peers; [cite_start]<cite>[cite: 239]</cite> he is getting a <strong>persona</strong> created in response to him. [cite_start]<cite>[cite: 240]</cite> This raises questions about what interview data really means. [cite_start]<cite>[cite: 241]</cite></li>
-                    <li><strong>The "Real Self":</strong> The example asks: Who is the "real" person?. [cite_start]<cite>[cite: 242]</cite> The Western view is that the "private" self (with friends) is "real". [cite_start]<cite>[cite: 243]</cite> Other views hold that the "public" self (with the interviewer) is the "real" or "better" self. [cite_start]<cite>[cite: 244]</cite></li>
-                    <li><strong>Embodiment & AI:</strong> The girl's talk with her friends is "profoundly embodied". [cite_start]<cite>[cite: 245]</cite> This is contrasted with Generative AI, which can <strong>mimic</strong> identity co-construction but lacks a body, feelings, and emotions, which are central to human cognition and caring. [cite_start]<cite>[cite: 246]</cite></li>
+                    <li><strong>Co-construction:</strong> The speaker's identity is "co-constructed" by her and her audience. The interviewer isn't interviewing the "same person" who talks to her peers; he is getting a <strong>persona</strong> created in response to him. This raises questions about what interview data really means.</li>
+                    <li><strong>The "Real Self":</strong> The example asks: Who is the "real" person?. The Western view is that the "private" self (with friends) is "real". Other views hold that the "public" self (with the interviewer) is the "real" or "better" self.</li>
+                    <li><strong>Embodiment & AI:</strong> The girl's talk with her friends is "profoundly embodied". This is contrasted with Generative AI, which can <strong>mimic</strong> identity co-construction but lacks a body, feelings, and emotions, which are central to human cognition and caring.</li>
                 </ul>
             </div>
 
             <button class="accordion">2. More Examples of Social Languages</button>
             <div class="panel">
-                [cite_start]<p><strong>Example 1: "Jane" (The "Hypocritical" Student)</strong> <cite>[cite: 248]</cite></p>
+                <p><strong>Example 1: "Jane" (The "Hypocritical" Student)</strong></p>
                 <ul>
-                    <li><strong>Context:</strong> A student, Jane, claimed she "did not use different social languages" because it would be "hypocritical". [cite_start]<cite>[cite: 249]</cite> She recorded herself to prove it but proved the opposite. [cite_start]<cite>[cite: 250]</cite></li>
-                    <li><strong>Talk to Parents (About a story):</strong> A formal, "school-like" social language. [cite_start]<cite>[cite: 251]</cite>
+                    <li><strong>Context:</strong> A student, Jane, claimed she "did not use different social languages" because it would be "hypocritical". She recorded herself to prove it but proved the opposite.</li>
+                    <li><strong>Talk to Parents (About a story):</strong> A formal, "school-like" social language.
                         <ul>
-                            <li><strong>Features:</strong> Hedges ("I don't know," "it seemed to me"), formal vocabulary ("offensive," "callous," "hypocritical"), and complex sentences. [cite_start]<cite>[cite: 252]</cite></li>
-                            <li><strong>Identity Enacted:</strong> "A dutiful and intelligent daughter". [cite_start]<cite>[cite: 253]</cite></li>
+                            <li><strong>Features:</strong> Hedges ("I don't know," "it seemed to me"), formal vocabulary ("offensive," "callous," "hypocritical"), and complex sentences.</li>
+                            <li><strong>Identity Enacted:</strong> "A dutiful and intelligent daughter".</li>
                         </ul>
                     </li>
-                    <li><strong>Talk to Boyfriend (Same story):</strong> An informal, "solidarity-building" social language. [cite_start]<cite>[cite: 254]</cite>
+                    <li><strong>Talk to Boyfriend (Same story):</strong> An informal, "solidarity-building" social language.
                         <ul>
-                            <li><strong>Features:</strong> Direct claims, informal vocabulary ("ass," "guy"), direct address ("you know"), and leaving points to be inferred. [cite_start]<cite>[cite: 255]</cite></li>
-                            <li><strong>Identity Enacted:</strong> "A girlfriend being intimate with her boyfriend". [cite_start]<cite>[cite: 256]</cite></li>
+                            <li><strong>Features:</strong> Direct claims, informal vocabulary ("ass," "guy"), direct address ("you know"), and leaving points to be inferred.</li>
+                            <li><strong>Identity Enacted:</strong> "A girlfriend being intimate with her boyfriend".</li>
                         </ul>
                     </li>
                 </ul>
-                [cite_start]<p><strong>Example 2: The Biologist (Professional vs. Popular)</strong> <cite>[cite: 257]</cite></p>
+                <p><strong>Example 2: The Biologist (Professional vs. Popular)</strong></p>
                 <ul>
-                    <li><strong>Context:</strong> The same biologist writing about the same topic (butterflies and vines) for two different audiences. [cite_start]<cite>[cite: 258]</cite></li>
-                    <li>The popular article is <strong>not</strong> just a "simplification" of the professional one; [cite_start]<cite>[cite: 259]</cite> it's a different social language that does a different job. [cite_start]<cite>[cite: 260]</cite></li>
-                    [cite_start]<li><strong>Professional Journal:</strong> <cite>[cite: 261]</cite>
+                    <li><strong>Context:</strong> The same biologist writing about the same topic (butterflies and vines) for two different audiences.</li>
+                    <li>The popular article is <strong>not</strong> just a "simplification" of the professional one; it's a different social language that does a different job.</li>
+                    <li><strong>Professional Journal:</strong>
                         <ul>
-                            <li><strong>Features:</strong> Focuses on <strong>methodology</strong> ("Experiments show...") and <strong>theory</strong> ("host-restricted group of insect herbivores"). [cite_start]<cite>[cite: 262]</cite></li>
-                            <li>The language names things based on their role in the theory. [cite_start]<cite>[cite: 263]</cite></li>
-                            <li><strong>Identity Enacted:</strong> The <strong>scientist as experimenter/theoretician</strong>, managing uncertainty for other experts. [cite_start]<cite>[cite: 264]</cite></li>
+                            <li><strong>Features:</strong> Focuses on <strong>methodology</strong> ("Experiments show...") and <strong>theory</strong> ("host-restricted group of insect herbivores").</li>
+                            <li>The language names things based on their role in the theory.</li>
+                            <li><strong>Identity Enacted:</strong> The <strong>scientist as experimenter/theoretician</strong>, managing uncertainty for other experts.</li>
                         </ul>
                     </li>
-                    [cite_start]<li><strong>Popular Magazine:</strong> <cite>[cite: 265]</cite>
+                    <li><strong>Popular Magazine:</strong>
                         <ul>
-                            <li><strong>Features:</strong> Tells a <strong>narrative</strong> ("Heliconius butterflies lay their eggs...") and uses <strong>intentional language</strong> ("in defense," "fake eggs"). [cite_start]<cite>[cite: 266]</cite></li>
-                            <li><strong>Identity Enacted:</strong> The <strong>scientist as a story-teller/observer</strong>, assuring the public that nature is knowable and transparent. [cite_start]<cite>[cite: 267]</cite></li>
+                            <li><strong>Features:</strong> Tells a <strong>narrative</strong> ("Heliconius butterflies lay their eggs...") and uses <strong>intentional language</strong> ("in defense," "fake eggs").</li>
+                            <li><strong>Identity Enacted:</strong> The <strong>scientist as a story-teller/observer</strong>, assuring the public that nature is knowable and transparent.</li>
                         </ul>
                     </li>
                 </ul>
@@ -598,41 +627,41 @@
 
             <button class="accordion">3. Two Aspects of Grammar</button>
             <div class="panel">
-                [cite_start]<p>Social languages are marked by two aspects of grammar: <cite>[cite: 269]</cite></p>
+                <p>Social languages are marked by two aspects of grammar:</p>
                 <ol>
-                    <li><strong>Aspect 1 (Traditional):</strong> The specific <strong>units</strong> used (e.g., nouns, verbs, clauses). [cite_start]<cite>[cite: 270]</cite></li>
-                    <li><strong>Aspect 2 (Collocational):</strong> The <strong>patterns</strong> created when grammatical units "co-locate" (or cluster) together. [cite_start]<cite>[cite: 271]</cite></li>
+                    <li><strong>Aspect 1 (Traditional):</strong> The specific <strong>units</strong> used (e.g., nouns, verbs, clauses).</li>
+                    <li><strong>Aspect 2 (Collocational):</strong> The <strong>patterns</strong> created when grammatical units "co-locate" (or cluster) together.</li>
                 </ol>
                 <ul>
-                    <li>These patterns are what <strong>signal or "index" a characteristic "who-doing-what"</strong>. [cite_start]<cite>[cite: 272]</cite></li>
-                    <li><strong>Analogy:</strong> Choosing clothes. A single item (like flip-flops) doesn't mean much. [cite_start]<cite>[cite: 273]</cite> But when flip-flops "co-locate" with a bathing suit, sunglasses, and a sun hat, the <strong>pattern</strong> signals a clear identity and activity (beach-goer). [cite_start]<cite>[cite: 274]</cite></li>
-                    <li><strong>Linguistic Example:</strong> In Jane's talk to her boyfriend, informal words ("ass," "guy") co-locate with informal devices ("you know") to form a <strong>pattern</strong> that clearly signals an informal, solidarity-building social language. [cite_start]<cite>[cite: 275]</cite></li>
+                    <li>These patterns are what <strong>signal or "index" a characteristic "who-doing-what"</strong>.</li>
+                    <li><strong>Analogy:</strong> Choosing clothes. A single item (like flip-flops) doesn't mean much. But when flip-flops "co-locate" with a bathing suit, sunglasses, and a sun hat, the <strong>pattern</strong> signals a clear identity and activity (beach-goer).</li>
+                    <li><strong>Linguistic Example:</strong> In Jane's talk to her boyfriend, informal words ("ass," "guy") co-locate with informal devices ("you know") to form a <strong>pattern</strong> that clearly signals an informal, solidarity-building social language.</li>
                 </ul>
             </div>
 
             <button class="accordion">4. The "112 Meanings" & The Myth of "Decontextualized" Language</button>
             <div class="panel">
-                <p>This final section argues that "formal" academic language is <strong>NOT</strong> "decontextualized" or more explicit than informal language. [cite_start]<cite>[cite: 277]</cite> It is just as context-dependent. [cite_start]<cite>[cite: 278]</cite></p>
-                <p><strong>The Sentence:</strong> "Lung cancer death rates are clearly associated with an increase in smoking". [cite_start]<cite>[cite: 279]</cite></p>
-                <p><strong>The "Trash Compactor" Problem:</strong> This sentence is full of <strong>nominalizations</strong> (turning whole sentences into noun phrases), like "lung cancer death rates" and "an increase in smoking". [cite_start]<cite>[cite: 280]</cite></p>
-                <p><strong>The Ambiguity:</strong> These nominalizations are "compacted trash"; you can't be sure what information went into them. [cite_start]<cite>[cite: 281]</cite></p>
+                <p>This final section argues that "formal" academic language is <strong>NOT</strong> "decontextualized" or more explicit than informal language. It is just as context-dependent.</p>
+                <p><strong>The Sentence:</strong> "Lung cancer death rates are clearly associated with an increase in smoking".</p>
+                <p><strong>The "Trash Compactor" Problem:</strong> This sentence is full of <strong>nominalizations</strong> (turning whole sentences into noun phrases), like "lung cancer death rates" and "an increase in smoking".</p>
+                <p><strong>The Ambiguity:</strong> These nominalizations are "compacted trash"; you can't be sure what information went into them.</p>
                 <ul>
-                    <li>"lung cancer death rates" could mean "how many people die" OR "how fast people die" OR "how many lungs die," etc. (4+ meanings). [cite_start]<cite>[cite: 282]</cite></li>
-                    <li>"are associated with" could mean "causes," "is caused by," or just "is correlated with" (4+ meanings). [cite_start]<cite>[cite: 283]</cite></li>
-                    <li>"an increase in smoking" could mean "people smoke more" OR "more people smoke," etc. (7+ meanings). [cite_start]<cite>[cite: 284]</cite></li>
+                    <li>"lung cancer death rates" could mean "how many people die" OR "how fast people die" OR "how many lungs die," etc. (4+ meanings).</li>
+                    <li>"are associated with" could mean "causes," "is caused by," or just "is correlated with" (4+ meanings).</li>
+                    <li>"an increase in smoking" could mean "people smoke more" OR "more people smoke," etc. (7+ meanings).</li>
                 </ul>
-                <p><strong>The Result:</strong> The grammar <strong>alone</strong> produces <strong>112+ possible meanings</strong> (4×4×7). [cite_start]<cite>[cite: 285]</cite></p>
-                <p><strong>The Mystery:</strong> Why does <strong>everyone</strong> instantly and unconsciously pick the <strong>same single meaning</strong> (that smoking causes more people to die from lung cancer)?. [cite_start]<cite>[cite: 286]</cite></p>
+                <p><strong>The Result:</strong> The grammar <strong>alone</strong> produces <strong>112+ possible meanings</strong> (4×4×7).</p>
+                <p><strong>The Mystery:</strong> Why does <strong>everyone</strong> instantly and unconsciously pick the <strong>same single meaning</strong> (that smoking causes more people to die from lung cancer)?.</p>
                 <div class="key-concept">
-                    <p><strong>The Answer:</strong> The <strong>"Big C" Conversation</strong>. We all pick the same meaning <strong>not</strong> because of the grammar, but because we are "privy to the ongoing discussion in our society about smoking". [cite_start]<cite>[cite: 287]</cite></p>
+                    <p><strong>The Answer:</strong> The <strong>"Big C" Conversation</strong>. We all pick the same meaning <strong>not</strong> because of the grammar, but because we are "privy to the ongoing discussion in our society about smoking".</p>
                     <ul>
-                        <li>The Conversation is <strong>more important</strong> than the grammar for fixing the meaning. [cite_start]<cite>[cite: 288]</cite></li>
+                        <li>The Conversation is <strong>more important</strong> than the grammar for fixing the meaning.</li>
                     </ul>
                 </div>
-                <p><strong>The Conclusion:</strong> "Formal" language is <strong>not decontextualized</strong>. [cite_start]<cite>[cite: 289]</cite></p>
+                <p><strong>The Conclusion:</strong> "Formal" language is <strong>not decontextualized</strong>.</p>
                 <ul>
-                    <li>It only makes sense when you use its specific Conversational context. [cite_start]<cite>[cite: 290]</cite></li>
-                    <li>To teach this language is to embed students "in the Conversational sea in which [it] swims". [cite_start]<cite>[cite: 291]</cite></li>
+                    <li>It only makes sense when you use its specific Conversational context.</li>
+                    <li>To teach this language is to embed students "in the Conversational sea in which [it] swims".</li>
                 </ul>
             </div>
 
@@ -669,6 +698,7 @@
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
+                // Simple toggle for display
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
